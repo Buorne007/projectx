@@ -5,7 +5,7 @@ $page_title="Project X - For the People";
 echo "<title>$page_title</title>"
 ?><!DOCTYPE html>
 <p>
-    Lipsu dolor sit amet, consectetur adipiscing elit. Nunc egestas mi eget arcu ornare, sit amet euismod tortor viverra.
+    Lipsm dolor sit amet, consectetur adipiscing elit. Nunc egestas mi eget arcu ornare, sit amet euismod tortor viverra.
     Integer nec consectetur ligula, rutrum efficitur leo. Quisque quis volutpat mi, sed malesuada leo.
     Aliquam eget erat a turpis imperdiet molestie ut quis tellus. Phasellus et consectetur lectus, quis pretium justo.
     Aliquam erat volutpat. Morbi et arcu vitae ante accumsan tincidunt a in velit.

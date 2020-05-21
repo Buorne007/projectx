@@ -11,10 +11,17 @@ if(isset($_GET['q'])){
     if(file_exists($q)){
         include($q); //return the requested page if found
     } else if($p==""){
-        include("_content/_pages/_home.php"); // always return homepage as default page if no call
+        // always return homepage as default page if no call
+        header("Location:?q=_home");
+        exit();
     } else{
-        include("_content/_pages/_404.php"); // return 404 if the page is not found
+       // return 404 if the page is not found
+        header("Location:?q=404");
+        exit();
     }
 } else{
-    include("_content/_pages/_home.php"); // always return homepage as default page if no call
+    // always return homepage as default page if no call
+    //include("_content/_pages/_home.php");
+    header("Location:?q=_home");
+    exit();
 }

@@ -31,7 +31,15 @@
   width: 70%;
   float: left;
   margin-left: 50px;
-  padding-left: 10px; }
+  padding-left: 10px;
+  padding-bottom: 30px;
+  padding-right: 10px; }
+
+.hidden {
+  display: none !important; }
+
+.nav-none {
+  display: none !important; }
 
 body {
   font-family: "Helvetica Neue", Helvetica-, Arial, sans-serif;

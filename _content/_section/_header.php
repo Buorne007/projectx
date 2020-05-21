@@ -1,4 +1,12 @@
 <?php
+    session_start();
+    if(isset($_SESSION['uID'])){
+        //do nothing
+    } else{
+        //return to login page
+        header("Location:login.php");
+        exit();
+    }
     $logo= '_content/_img/projx_logob.png';
     $avatar= '_content/_img/avatar_m.png';
 ?><!DOCTYPE HTML>
@@ -24,7 +32,7 @@
             <div id="submenu" class="submenu">
                 <ul>
                     <li><a href="?q=acc_overview">My Account</a> </li>
-                    <li><a href="#">Logout</a> </li>
+                    <li><a href="logout.php">Logout</a> </li>
                 </ul>
             </div>
         </li>

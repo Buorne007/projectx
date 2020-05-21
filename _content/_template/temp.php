@@ -22,26 +22,26 @@
 
             <!-- load header -->
             <div id="header" class="header sticky">
-                <?php require_once ("_content/_section/_header.php"); ?>
+                <?php require ("_content/_section/_header.php"); ?>
             </div>
 
             <!-- body -->
             <div id="content" class="content">
                 <!-- load side nav    -->
-                <div id="sidebar" class="sidebar">
+                <div id="sidebar" class="<?php if ($p == ''|| $p == '_home'){echo'hidden';} else{echo 'sidebar';}?>">
                     <?php
                     if($p=="acc_overview" || $p=="family" || $p=="chg_pwd"){
                         require_once ("_content/_section/_account_sidebar.php");
                     } elseif ($p=="ndeclr" || $p=="pdeclr" || $p=="requests"){
                         require_once ("_content/_section/_declr_sidebar.php");
-                    } else{
-
                     }
                     ?>
                 </div>
 
+
+
                 <!-- load main -->
-                <div id="main" class="main">
+                <div id="main" class="<?php if ($p == '' || $p == '_home'){echo'f_width';} else{echo 'main';}?>">
                     <?php require_once ("_content/_section/_main.php"); ?>
                 </div>
             </div>
