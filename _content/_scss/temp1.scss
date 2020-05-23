@@ -13,19 +13,37 @@
   padding-right: 10px;
   vertical-align: middle;
 }
-
+/*global*/
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
+
+.middle{
+  text-align: center;
+}
+
+.col-sm-l{
+  display: inline-block;
+  float: left;
+  width: 100%;
+  max-width: 45%;
+}
+.col-sm-r{
+  display: inline-block;
+  float: right;
+  width: 100%;
+  max-width: 45%;
+}
+
 .content{
   display: block;
   clear: both;
   padding: 20px;
-  min-height: 500px;
-  height: 100%;
+  min-height: 457px;
+  height: auto;
 }
 
 .sticky{
@@ -42,9 +60,43 @@
   padding-right: 10px;
 }
 
+.error{
+  color: $red;
+  text-align: center;
+  font-size: 15px;
+}
+
+.header-title{
+  margin-bottom: 20px;
+
+  h1{
+    padding-bottom: 10px;
+  }
+}
+
 .f_width{
 //
 }
+
+/*Buttons*/
+button {
+  padding: 10px;
+  border: none;
+  color: white;
+  background: $blue;
+
+  &:hover{
+    background: $navy_blue;
+
+  }
+}
+
+.button-submit button{
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+}
+/*end buttons*/
 
 .hidden{
   display: none !important;
@@ -59,6 +111,7 @@ body{
   line-height: 1.42857;
 }
 
+/*end global*/
 .header{
   padding:0 150px;
   background: $blue;
@@ -231,5 +284,68 @@ body{
       float: right;
 
     }
+  }
+}
+
+/*
+*signup and login page
+ */
+.form-area {
+  padding: 20px 0;
+}
+form{
+  overflow: hidden;
+
+  .form-wrapper{
+    margin: 10px;
+    display: block;
+  }
+
+  /*uncomment if label is added*/
+  label{
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 100%;
+
+    /*input masked in labels*/
+    input, select{
+      display: inline-block;
+      padding: 10px;
+
+    }
+
+  }
+  input, select{
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+.form-cta, .form-reminder {
+margin:10px;
+
+  .forgotpwd, .signup, .login{
+    display: inherit;
+    font-size: 12.5px;
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $blue;
+        padding-bottom: 3px;
+      }
+    }
+  }
+
+  .forgotpwd{
+    text-align: left;
+  }
+  .signup, .login{
+
+    text-align: right !important;
   }
 }

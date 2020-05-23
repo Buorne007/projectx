@@ -10,10 +10,15 @@ require ("_content/_template/reg_top.php");
 <div id="content" class="content">
 
     <!-- load main -->
-    <div id="main" class="center">
-
-        <h1>Login</h1>
-
+    <div id="main" class="center form-area">
+        <div id="header-title" class="header-title middle">
+            <h1>Login</h1>
+            <?php
+            if(!isset($_GET['error'])) {
+                echo '<p>Please fill the form below.</p>';
+            }
+            ?>
+        </div>
         <?php
         /*
          * Echo errors
@@ -36,22 +41,26 @@ require ("_content/_template/reg_top.php");
         ?>
         <div id="form">
             <form action="_admin/_controller/login-ctrl.php" method="post">
-                <label>Codice Fiscale</label><input type="text" name="cf" placeholder="Codice fiscale" minlength="16" maxlength="16"><br>
-                <label>E-mail</label><input type="text" name="mail" placeholder="Your e-mail address"><br>
-                <label>Password</label><input type="password" name="pwd" minlength="8" placeholder="Your password"><br>
-                <button type="submit" name="login-submit"> Login</button>
+                <div id="form-wrapper" class="form-wrapper">
+                    <label>Codice Fiscale<input type="text" name="cf"  minlength="16" maxlength="16"></label>
+                </div>
+                <div id="form-wrapper" class="form-wrapper">
+                    <label>E-mail<input type="text" name="mail"></label>
+                </div>
+                <div id="form-wrapper" class="form-wrapper">
+                    <label>Password<input type="password" name="pwd" minlength="8"></label>
+                </div>
+                <div id="form-wrapper" class="form-wrapper button-submit middle">
+                    <button type="submit" name="login-submit"> Login</button>
+                </div>
             </form>
-        </div>
-        <div id="form-reminder">
-            <div id="forgotpwd">
-                <a href="signup.php">Forgot Password</a>
-            </div>
-            <div id="signup">
-                <p>Not Registered?
-                <a href="signup.php">
-                    <button type="button">Signup</button>
-                </a>
-                </p>
+            <div id="form-cta" class="form-cta form-wrapper middle">
+                <div id="forgotpwd" class="forgotpwd">
+                    <a href="signup.php">Forgot Password</a>
+                </div>
+                <div id="signup" class="signup">
+                    <span>Not Registered? <a href="signup.php">Signup</a></span>
+                </div>
             </div>
         </div>
     </div>

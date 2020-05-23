@@ -10,9 +10,14 @@ require ("_content/_template/reg_top.php");
 <div id="content" class="content">
 
     <!-- load main -->
-    <div id="main" class="center">
-    <div class="page-title">
+    <div id="main" class="center form-area">
+    <div id="header-title" class="header-title middle">
         <h1>Signup</h1>
+        <?php
+         if(!isset($_GET['error'])) {
+             echo '<p>Please fill the form below to register.</p>';
+        }
+        ?>
     </div>
         <?php
         /*
@@ -45,30 +50,42 @@ require ("_content/_template/reg_top.php");
         ?>
         <div id="form">
             <form action="_admin/_controller/signup-ctrl.php" method="post">
-                <label>Name</label><input type="text" name="name" placeholder="Name">
-                <label>Surname</label><input type="text" name="surname" placeholder="Surname"><br>
-                <label>Codice Fiscale</label><input type="text" name="cf" placeholder="Codice fiscale" minlength="16" maxlength="16"><br>
-                <label>E-mail</label><input type="text" name="mail" placeholder="Your e-mail address"><br>
-                <label>Password</label><input type="password" name="pwd" minlength="8" placeholder="Your password">
-                <label>Repeat password</label><input type="password" name="repeat-pwd" placeholder="Confirm password"><br>
-                <label for="secret-q">Secret Question</label>
-                    <select id="secret-q" name="secret-q">
-                        <option></option>
-                        <option value="hobby">What's your hobby</option>
-                        <option value="car">What brand was your first car</option>
-                        <option value="best-experience">What is your best experience</option>
-                        <option value="fav-aunt">What is the name of your favourite aunty</option>
-                        <option value="house">At what age did you buy your first house</option>
-                    </select>
-                <label>Answer</label><input type="text" name="secret-a" placeholder="Response"><br>
-                <button type="submit" name="signup-submit"> Signup</button>
+                <div id="form-wrapper" class="form-wrapper">
+                    <label class="col-sm-l">Name<input type="text" name="name" placeholder=""></label>
+                    <label class="col-sm-r">Surname<input type="text" name="surname" placeholder=""></label>
+                </div>
+                <div id="form-wrapper" class="form-wrapper">
+                    <label>Codice Fiscale<input type="text" name="cf" placeholder="" minlength="16" maxlength="16"></label>
+                </div>
+                <div id="form-wrapper" class="form-wrapper">
+                    <label>E-mail<input type="text" name="mail" placeholder=""><br></label>
+                </div>
+                <div id="form-wrapper" class="form-wrapper">
+                     <label class="col-sm-l">Password<input type="password" name="pwd" minlength="8" placeholder=""></label>
+                     <label class="col-sm-r">Repeat password<input type="password" name="repeat-pwd" placeholder=""></label>
+                </div>
+                <div id="form-wrapper" class="form-wrapper">
+                    <label for="secret-q">Secret Question
+                        <select id="secret-q" name="secret-q">
+                            <option></option>
+                            <option value="hobby">What's your hobby</option>
+                            <option value="car">What brand was your first car</option>
+                            <option value="best-experience">What is your best experience</option>
+                            <option value="fav-aunt">What is the name of your favourite aunty</option>
+                            <option value="house">At what age did you buy your first house</option>
+                        </select>
+                    </label>
+                    <label class="col-sm">Answer<input type="text" name="secret-a" placeholder="Response"></label>
+                </div>
+                <div id="form-wrapper" class="form-wrapper button-submit middle">
+                    <button type="submit" name="signup-submit"> Signup</button>
+                </div>
             </form>
         </div>
-        <div id="form-reminder">
-            <p>Already Registered?</p>
-            <a href="login.php">
-                <button type="button">Login</button>
-            </a>
+        <div id="form-reminder" class="form-reminder form-wrapper middle">
+            <div id="login" class="login">
+                <span>Already Registered? <a href="login.php">Login</a></span>
+            </div>
         </div>
     </div>
 </div>

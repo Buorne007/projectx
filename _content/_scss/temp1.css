@@ -10,18 +10,34 @@
   padding-right: 10px;
   vertical-align: middle; }
 
+/*global*/
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%; }
 
+.middle {
+  text-align: center; }
+
+.col-sm-l {
+  display: inline-block;
+  float: left;
+  width: 100%;
+  max-width: 45%; }
+
+.col-sm-r {
+  display: inline-block;
+  float: right;
+  width: 100%;
+  max-width: 45%; }
+
 .content {
   display: block;
   clear: both;
   padding: 20px;
-  min-height: 500px;
-  height: 100%; }
+  min-height: 457px;
+  height: auto; }
 
 .sticky {
   position: sticky;
@@ -35,6 +51,31 @@
   padding-bottom: 30px;
   padding-right: 10px; }
 
+.error {
+  color: red;
+  text-align: center;
+  font-size: 15px; }
+
+.header-title {
+  margin-bottom: 20px; }
+  .header-title h1 {
+    padding-bottom: 10px; }
+
+/*Buttons*/
+button {
+  padding: 10px;
+  border: none;
+  color: white;
+  background: #0A0A24; }
+  button:hover {
+    background: #239edb; }
+
+.button-submit button {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400; }
+
+/*end buttons*/
 .hidden {
   display: none !important; }
 
@@ -46,6 +87,7 @@ body {
   font-size: 14px;
   line-height: 1.42857; }
 
+/*end global*/
 .header {
   padding: 0 150px;
   background: #0A0A24;
@@ -161,5 +203,47 @@ body {
     .footer .footer-icon img {
       width: 40px;
       float: right; }
+
+/*
+*signup and login page
+ */
+.form-area {
+  padding: 20px 0; }
+
+form {
+  overflow: hidden;
+  /*uncomment if label is added*/ }
+  form .form-wrapper {
+    margin: 10px;
+    display: block; }
+  form label {
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 100%;
+    /*input masked in labels*/ }
+    form label input, form label select {
+      display: inline-block;
+      padding: 10px; }
+  form input, form select {
+    display: inline-block;
+    padding: 10px;
+    width: 100%; }
+
+.form-cta, .form-reminder {
+  margin: 10px; }
+  .form-cta .forgotpwd, .form-cta .signup, .form-cta .login, .form-reminder .forgotpwd, .form-reminder .signup, .form-reminder .login {
+    display: inherit;
+    font-size: 12.5px; }
+    .form-cta .forgotpwd a, .form-cta .signup a, .form-cta .login a, .form-reminder .forgotpwd a, .form-reminder .signup a, .form-reminder .login a {
+      text-decoration: none;
+      color: black; }
+      .form-cta .forgotpwd a:hover, .form-cta .signup a:hover, .form-cta .login a:hover, .form-reminder .forgotpwd a:hover, .form-reminder .signup a:hover, .form-reminder .login a:hover {
+        text-decoration: underline;
+        text-decoration-color: #0A0A24;
+        padding-bottom: 3px; }
+  .form-cta .forgotpwd, .form-reminder .forgotpwd {
+    text-align: left; }
+  .form-cta .signup, .form-cta .login, .form-reminder .signup, .form-reminder .login {
+    text-align: right !important; }
 
 /*# sourceMappingURL=temp1.css.map */
