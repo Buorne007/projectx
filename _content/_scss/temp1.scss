@@ -32,11 +32,13 @@
   max-width: 45%;
 }
 .col-sm-r{
+
   display: inline-block;
   float: right;
   width: 100%;
   max-width: 45%;
 }
+
 
 .content{
   display: block;
@@ -287,38 +289,41 @@ body{
   }
 }
 
-/*
+/* FORMS !!! ********
 *signup and login page
  */
 .form-area {
   padding: 20px 0;
 }
-form{
+.form-wrapper {
+  margin: 10px;
+  display: block;
   overflow: hidden;
+}
+.login-form, .signup-form {
+  form {
+    overflow: hidden;
 
-  .form-wrapper{
-    margin: 10px;
-    display: block;
-  }
-
-  /*uncomment if label is added*/
-  label{
-    display: inline-block;
-    margin-bottom: 5px;
-    width: 100%;
-
-    /*input masked in labels*/
-    input, select{
+    /*uncomment if label is added*/
+    label {
       display: inline-block;
-      padding: 10px;
+      margin-bottom: 5px;
+      width: 100%;
+
+      /*input masked in labels*/
+      input, select {
+        display: inline-block;
+        padding: 10px;
+
+      }
 
     }
 
-  }
-  input, select{
-    display: inline-block;
-    padding: 10px;
-    width: 100%;
+    input, select {
+      display: inline-block;
+      padding: 10px;
+      width: 100%;
+    }
   }
 }
 
@@ -347,5 +352,110 @@ margin:10px;
   .signup, .login{
 
     text-align: right !important;
+  }
+}
+
+/*Declaration Forms arena*/
+.form-declaration{
+  h3{
+    text-align: center;
+    padding: 15px;
+  }
+
+
+  form {
+
+    input{
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 1px solid $blue;
+      padding: 0 5px 0 5px;
+
+
+      &:hover, &:active, &:focus{
+        background: $light_blue;
+        outline: none;
+      }
+
+      &[type="date" i]{
+        padding-right: 2px;
+
+      }
+    }
+
+    ul {
+      list-style: none;
+
+      li{
+        padding-bottom: 5px;
+          &::before {
+          content: '▶';
+          margin-right: 5px;
+        }
+
+        .reason label{
+          display: block;
+          padding: 5px 0 5px 10px;
+
+        }
+      }
+    }
+
+    .reason-stmt textarea{
+      width: 100%;
+      max-width: 70%;
+      outline: none;
+      padding: 10px;
+    }
+    .submit-date input{
+      max-width: 19%;
+      padding-right: 0;
+    }
+
+    .submit-date input, .submit-cf input{
+      border-bottom: none !important;
+
+      &:hover, &:active, &:focus{
+        background: none;
+        outline: none;
+      }
+
+    }
+
+    .spacing{
+      padding: 10px 0;
+      margin-bottom: 30px;
+    }
+
+    .preview input{
+      text-align: center;
+
+      &:hover, &:active, &:focus{
+        background: transparent;
+      }
+
+    }
+
+  }
+  .prev_declr{
+    text-align: right !important;
+    margin-top: 15px;
+    a {
+      text-decoration: none;
+      color: white;
+      background: $blue;
+      padding: 10px;
+
+      &::after {
+        content: ' →';
+        margin-left: 5px;
+
+      }
+
+      &:hover {
+        background: $navy_blue;
+      }
+    }
   }
 }

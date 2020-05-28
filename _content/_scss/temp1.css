@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*remove all default space*/
 *, html, body {
   margin: 0;
@@ -204,27 +205,29 @@ body {
       width: 40px;
       float: right; }
 
-/*
+/* FORMS !!! ********
 *signup and login page
  */
 .form-area {
   padding: 20px 0; }
 
-form {
+.form-wrapper {
+  margin: 10px;
+  display: block;
+  overflow: hidden; }
+
+.login-form form, .signup-form form {
   overflow: hidden;
   /*uncomment if label is added*/ }
-  form .form-wrapper {
-    margin: 10px;
-    display: block; }
-  form label {
+  .login-form form label, .signup-form form label {
     display: inline-block;
     margin-bottom: 5px;
     width: 100%;
     /*input masked in labels*/ }
-    form label input, form label select {
+    .login-form form label input, .login-form form label select, .signup-form form label input, .signup-form form label select {
       display: inline-block;
       padding: 10px; }
-  form input, form select {
+  .login-form form input, .login-form form select, .signup-form form input, .signup-form form select {
     display: inline-block;
     padding: 10px;
     width: 100%; }
@@ -245,5 +248,64 @@ form {
     text-align: left; }
   .form-cta .signup, .form-cta .login, .form-reminder .signup, .form-reminder .login {
     text-align: right !important; }
+
+/*Declaration Forms arena*/
+.form-declaration h3 {
+  text-align: center;
+  padding: 15px; }
+.form-declaration form input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #0A0A24;
+  padding: 0 5px 0 5px; }
+  .form-declaration form input:hover, .form-declaration form input:active, .form-declaration form input:focus {
+    background: #B9DEED;
+    outline: none; }
+  .form-declaration form input[type="date" i] {
+    padding-right: 2px; }
+.form-declaration form ul {
+  list-style: none; }
+  .form-declaration form ul li {
+    padding-bottom: 5px; }
+    .form-declaration form ul li::before {
+      content: '▶';
+      margin-right: 5px; }
+    .form-declaration form ul li .reason label {
+      display: block;
+      padding: 5px 0 5px 10px; }
+.form-declaration form .reason-stmt textarea {
+  width: 100%;
+  max-width: 70%;
+  outline: none;
+  padding: 10px; }
+.form-declaration form .submit-date input {
+  max-width: 19%;
+  padding-right: 0; }
+.form-declaration form .submit-date input, .form-declaration form .submit-cf input {
+  border-bottom: none !important; }
+  .form-declaration form .submit-date input:hover, .form-declaration form .submit-date input:active, .form-declaration form .submit-date input:focus, .form-declaration form .submit-cf input:hover, .form-declaration form .submit-cf input:active, .form-declaration form .submit-cf input:focus {
+    background: none;
+    outline: none; }
+.form-declaration form .spacing {
+  padding: 10px 0;
+  margin-bottom: 30px; }
+.form-declaration form .preview input {
+  text-align: center; }
+  .form-declaration form .preview input:hover, .form-declaration form .preview input:active, .form-declaration form .preview input:focus {
+    background: transparent; }
+.form-declaration .prev_declr {
+  text-align: right !important;
+  margin-top: 15px; }
+  .form-declaration .prev_declr a {
+    text-decoration: none;
+    color: white;
+    background: #0A0A24;
+    padding: 10px; }
+    .form-declaration .prev_declr a::after {
+      content: ' →';
+      margin-left: 5px; }
+    .form-declaration .prev_declr a:hover {
+      background: #239edb; }
 
 /*# sourceMappingURL=temp1.css.map */

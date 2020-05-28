@@ -2,45 +2,84 @@
 $page_title="New Declaration";
 
 //load our page title
-echo "<title>$page_title $site_title</title>"
+echo "<title>$page_title $site_title</title>";
+
+    require '_admin/_controller/_dbhandler/dbh.php';
+/*get data to prefill form*/
+$sql = "SELECT * FROM users WHERE u_cf=?";
+$query = mysqli_stmt_init($conn);
+if(!mysqli_stmt_prepare($query, $sql)){
+    //header("Location:../../login.php?error=connectionerror");
+    exit();
+}
+else{
+    mysqli_stmt_bind_param($query, "s", $_SESSION['ucf']);
+    mysqli_stmt_execute($query);
+    $result = mysqli_stmt_get_result($query);
+    if($row = mysqli_fetch_assoc($result)){
+        $f_name = $row['u_name'];
+        $s_name = $row['u_surname'];
+
+    }
+}
+// close all connections
+mysqli_stmt_close($query);
+mysqli_close($conn);
+
 ?><!DOCTYPE html>
-<p>
-    Lipsu dolor sit amet, consectetur adipiscing elit. Nunc egestas mi eget arcu ornare, sit amet euismod tortor viverra.
-    Integer nec consectetur ligula, rutrum efficitur leo. Quisque quis volutpat mi, sed malesuada leo.
-    Aliquam eget erat a turpis imperdiet molestie ut quis tellus. Phasellus et consectetur lectus, quis pretium justo.
-    Aliquam erat volutpat. Morbi et arcu vitae ante accumsan tincidunt a in velit.
-    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec posuere rhoncus congue.
-    Nulla quis tortor sed turpis ullamcorper eleifend. In hac habitasse platea dictumst.
-    Mauris lobortis quam eu tellus vulputate, nec ultrices leo condimentum. In tristique sed tellus sed maximus.
-    Nullam eget enim eget sem lobortis porta in ac ante. Suspendisse non mauris porttitor, porta ipsum eget, dignissim nisl.
-</p>
-<p>
-    Cras eget rutrum magna, quis vehicula ipsum. Maecenas at augue vitae sapien pulvinar suscipit consequat quis tortor.
-    Praesent ac neque nec enim semper feugiat. Nulla finibus orci eu viverra vehicula.
-    Nunc vel ante nec ex dignissim faucibus non non urna. Suspendisse vestibulum auctor mi eget lacinia.
-    Aliquam eget ullamcorper odio, vitae faucibus mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-</p>
-<p>
-    Sed id justo eget nisi gravida venenatis. Curabitur non lorem eget lectus accumsan molestie in porttitor mi.
-    Integer finibus, risus ut convallis sagittis, nulla mi euismod orci, in pellentesque nisi justo quis libero.
-    Nulla in augue a nunc tincidunt ornare sit amet non ante. Proin dapibus lorem nisl.
-    Sed sed urna ac metus fringilla scelerisque. Cras in maximus diam. Quisque sit amet accumsan ante, at feugiat lectus.
-    Phasellus posuere vel turpis ac pretium. Nunc scelerisque, nunc et sodales aliquam, magna lorem consequat felis, quis bibendum nisi tellus aliquet diam.
-    Mauris sit amet malesuada dolor. Sed non porta turpis. Vestibulum molestie, magna non posuere pulvinar, lorem nibh ultricies lectus, id posuere lacus libero sit amet arcu.
-    Fusce dapibus tristique lacus, sed tincidunt turpis volutpat eu. Nunc eget mi urna.
-    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-</p>
-<p>
-    Donec lobortis accumsan malesuada. Duis imperdiet, felis condimentum blandit venenatis, ipsum sem vulputate dui, eget semper magna nulla nec tellus.
-    Aliquam ex ante, accumsan ac semper a, dignissim a turpis. Sed vestibulum semper erat, quis molestie ligula tristique vitae.
-    In finibus odio turpis, a sodales dolor aliquam in. Praesent elementum a dolor sit amet molestie.
-    Ut porttitor magna quis dui luctus varius. Morbi eu vehicula lacus, sit amet lobortis nulla.
-    Fusce tincidunt ullamcorper nulla non maximus. Quisque ac rhoncus nunc. Aenean eget pulvinar nulla.
-    Fusce eu commodo felis. Morbi tincidunt orci tincidunt auctor lobortis. Integer metus leo, euismod sed ligula et, elementum consectetur orci.
-    Phasellus eleifend egestas mauris eget accumsan. Pellentesque non mattis libero.
-</p>
-<p>
-    Duis lacinia velit eget pharetra dignissim. Donec eu est quis eros lacinia pretium vel et velit. Sed vel tempus tellus.
-    Suspendisse vel pharetra ipsum. Pellentesque vitae ante vitae dui bibendum fermentum ac a nibh.
-    Pellentesque vel tellus arcu. Sed fermentum pulvinar malesuada. Vivamus consectetur sapien ut ultrices lobortis.
-</p>
+<div id="header-title" class="header-title middle">
+    <h2>AUTODICHIARAZIONE AI SENSI DEGLI ARTT. 46 E 47 D.P.R. N. 445/2000</h2>
+    <p>Please fill the form below.</p>
+    <?php
+    if(!isset($_GET['error'])) {
+        echo '';
+    }
+    ?>
+</div>
+<div id="form" class="form-declaration">
+    <form action="_admin/_controller/_dbhandler/ndeclr-ctrl.php" method="post">
+        <div id="form-wrapper" class="form-wrapper">
+            <label>Il sottoscritto <input type="text" name="f_name" size="42" value="<?php echo $f_name. " " .$s_name; ?>" required></label>
+            <label>nato il <input type="date" name="dob" required></label>
+            <label>a <input type="text" name="pob" size="10" required></label>
+            <label>residente in <input type="text" name="res" size="10" required></label>
+            <label>via <input type="text" name="addr_res" size="30" required></label>
+            <label>e domiciliato in <input type="text" name="dom" size="10"></label>
+            <label>via <input type="text" name="addr_dom" size="30" ></label>
+            <label>identificato a mezzo <input type="text" name="mezzo" size="15"></label>
+            <label> nr. <input type="text" name="no_mezzo" maxlength="7" size="10"></label>
+            <label>rilasciato da <input type="text" name="release_by" size="20"></label>
+            <label> in data <input type="date" name="release_date"></label>
+            <label>utenza telefonica <input type="tel" name="phone" max="13" required></label>
+            <label>consapevole delle conseguenze penali previste in caso di dichiarazioni mendaci a pubblico ufficiale (art. 495 c.p.)</label>
+        </div>
+        <div id="form-wrapper" class="form-wrapper">
+            <h3><u>DICHIARA SOTTO LA PROPRIA RESPONSABILITÀ</u></h3>
+            <ul>
+                <li>di non essere sottoposto alla misura della quarantena ovvero di non essere risultato positivo al COVID-19 (fattisalvi gli spostamenti disposti dalle Autorità sanitarie);</li>
+                <li>che lo spostamento è iniziato da <label><input type="text" name="depart" size="15" required>(indicare l'indirizzo da cui è iniziato)</label>
+                    <label>con destinazione<input type="text" name="dest" size="15" required></label>
+                </li>
+                <li>di essere a conoscenza delle misure di contenimento del contagio vigenti alla data odierna concernenti le limitazioni alle possibilità di spostamento delle persone fisiche all'interno di tutto il territorio nazionale;</li>
+                <li>di essere a conoscenza delle sanzioni previste dall'art. 4 del decreto legge 25 marzo 2020, n. 19;</li>
+                <li>che lo spostamento è determinato da:
+                    <div id="reason" class="reason">
+                        <label for="r1"><input type="radio" id="r1" name="reason" value="comprovate esigenze lavorative" required> comprovate esigenze lavorative;</label>
+                        <label for="r2"><input type="radio" id="r2" name="reason" value="assoluta urgenza" required> assoluta urgenza;</label>
+                        <label for="r3"> <input type="radio" id="r3" name="reason" value="situazione di necessità" required> situazione di necessità;</label>
+                        <label for="r4"> <input type="radio" id="r4" name="reason" value="motivi di salute" required> motivi di salute.</label>
+                    </div>
+                </li>
+            </ul>
+            <label class="reason-stmt"> A questo riguardo, dichiara che <br> <textarea name="reason_stmt" maxlength="100" rows="5" cols="60"></textarea></label>
+        </div>
+        <div id="form-wrapper" class="form-wrapper spacing">
+            <label  class="col-sm-l submit-date">Data: <input type="text" name="submit_date" value="<?php echo  date('d-m-Y'); ?>" readonly>alle
+                <input type="text" name="submit_time" value="<?php echo  date('H:i:s'); ?>" readonly></label>
+            <label class="col-sm-r submit-cf">Codice fiscale del dichiarante: <?php echo $_SESSION['ucf']; ?></label>
+        </div>
+        <div id="form-wrapper" class="form-wrapper button-submit middle">
+            <button type="submit" name="ndeclr-submit"> Submit</button>
+        </div>
+    </form>
+</div>

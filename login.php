@@ -39,7 +39,7 @@ require ("_content/_template/reg_top.php");
         }
 
         ?>
-        <div id="form">
+        <div id="form" class="login-form">
             <form action="_admin/_controller/login-ctrl.php" method="post">
                 <div id="form-wrapper" class="form-wrapper">
                     <label>Codice Fiscale<input type="text" name="cf"  minlength="16" maxlength="16"></label>

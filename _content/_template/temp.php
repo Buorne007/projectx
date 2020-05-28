@@ -32,7 +32,7 @@
                     <?php
                     if($p=="acc_overview" || $p=="family" || $p=="chg_pwd"){
                         require_once ("_content/_section/_account_sidebar.php");
-                    } elseif ($p=="ndeclr" || $p=="pdeclr" || $p=="requests"){
+                    } else/*if ($p=="ndeclr" || $p=="pdeclr" || $p=="requests")*/{
                         require_once ("_content/_section/_declr_sidebar.php");
                     }
                     ?>

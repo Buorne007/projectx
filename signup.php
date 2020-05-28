@@ -48,7 +48,7 @@ require ("_content/_template/reg_top.php");
         }
 
         ?>
-        <div id="form">
+        <div id="form" class="signup-form">
             <form action="_admin/_controller/signup-ctrl.php" method="post">
                 <div id="form-wrapper" class="form-wrapper">
                     <label class="col-sm-l">Name<input type="text" name="name" placeholder=""></label>
@@ -75,7 +75,7 @@ require ("_content/_template/reg_top.php");
                             <option value="house">At what age did you buy your first house</option>
                         </select>
                     </label>
-                    <label class="col-sm">Answer<input type="text" name="secret-a" placeholder="Response"></label>
+                    <label>Answer<input type="text" name="secret-a" placeholder="Response"></label>
                 </div>
                 <div id="form-wrapper" class="form-wrapper button-submit middle">
                     <button type="submit" name="signup-submit"> Signup</button>
