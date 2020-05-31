@@ -15,6 +15,8 @@
         <script>window.jQuery || document.write('<script src="_content/_js/jquery-3.5.0.min.js"><\/script>');</script>
         <!--    load our global js file-->
         <script src="_content/_js/global.js"></script>
+        <!-- Load Fontawsome via CDN -->
+<!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
     </head>
 
     <body>

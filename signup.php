@@ -68,11 +68,11 @@ require ("_content/_template/reg_top.php");
                     <label for="secret-q">Secret Question
                         <select id="secret-q" name="secret-q">
                             <option></option>
-                            <option value="hobby">What's your hobby</option>
-                            <option value="car">What brand was your first car</option>
-                            <option value="best-experience">What is your best experience</option>
-                            <option value="fav-aunt">What is the name of your favourite aunty</option>
-                            <option value="house">At what age did you buy your first house</option>
+                            <option value="What is your hobby">What's your hobby</option>
+                            <option value="What brand was your first car">What brand was your first car</option>
+                            <option value="What is your best experience">What is your best experience</option>
+                            <option value=">What is the name of your favourite aunty">What is the name of your favourite aunty</option>
+                            <option value="At what age did you buy your first house">At what age did you buy your first house</option>
                         </select>
                     </label>
                     <label>Answer<input type="text" name="secret-a" placeholder="Response"></label>

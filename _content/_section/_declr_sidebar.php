@@ -6,7 +6,7 @@ $avatar= '_content/_img/avatar_m.png';
         <ul>
             <li> <a href="?q=ndeclr" class="<?php if ($p == 'ndeclr'){echo'active';}?>"><i class="fas fa-home fa-fw icone"></i>New Declaration</a> </li>
             <li> <a href="?q=pdeclr" class="<?php if ($p == 'pdeclr'){echo'active';}?>"><i class="fas fa-cog fa-fw icone"></i>Past Declarations</a> </li>
-            <li> <a href="?q=requests" class="<?php if ($p == 'requests'){echo'active';}?>"><i class="fas fa-calendar-alt fa-fw icone"></i>Requests</a> </li>
+<!--            <li> <a href="?q=requests" class="--><?php //if ($p == 'requests'){echo'active';}?><!--"><i class="fas fa-calendar-alt fa-fw icone"></i>Requests</a> </li>-->
         </ul>
 </div>
 

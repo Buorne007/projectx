@@ -97,8 +97,10 @@ if (isset($_POST['signup-submit'])){
                     mysqli_stmt_execute($query); //execute the query
                     //start user session
                     session_start();
-                    $_SESSION['uID'] = $email;
+                    $_SESSION['uemail'] = $email;
                     $_SESSION['ucf'] = $cf;
+                    $_SESSION['name'] = $name;
+                    $_SESSION['s_name'] = $surname;
                     header("Location:../../?q=_home");
                     exit();
 

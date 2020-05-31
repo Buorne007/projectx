@@ -14,8 +14,11 @@ require ("_content/_template/reg_top.php");
         <div id="header-title" class="header-title middle">
             <h1>Login</h1>
             <?php
-            if(!isset($_GET['error'])) {
+
+            if(!isset($_GET['error']) ) {
+                if(!isset($_GET['success']) ){
                 echo '<p>Please fill the form below.</p>';
+                }
             }
             ?>
         </div>
@@ -37,6 +40,11 @@ require ("_content/_template/reg_top.php");
                 echo '<p class="error">Cannot connect to server, please try again later.</p>';
             }
         }
+        elseif (isset($_GET['success'])){
+            if ($_GET['success'] =="true") {
+                echo '<p class="success">Password reset was successful..<br>Please Fill the form below to Login</p>';
+            }
+        }
 
         ?>
         <div id="form" class="login-form">
@@ -56,7 +64,7 @@ require ("_content/_template/reg_top.php");
             </form>
             <div id="form-cta" class="form-cta form-wrapper middle">
                 <div id="forgotpwd" class="forgotpwd">
-                    <a href="signup.php">Forgot Password</a>
+                    <a href="forgotpwd.php">Forgot Password</a>
                 </div>
                 <div id="signup" class="signup">
                     <span>Not Registered? <a href="signup.php">Signup</a></span>

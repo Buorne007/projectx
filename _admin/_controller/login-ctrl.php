@@ -39,6 +39,8 @@
                         session_start();
                         $_SESSION['uID'] = $row['u_id'];
                         $_SESSION['ucf'] = $row['u_cf'];
+                        $_SESSION['name'] = $row['u_name'];
+                        $_SESSION['s_name'] = $row['u_surname'];
                         header("Location:../../?q=_home");
                         exit();
 

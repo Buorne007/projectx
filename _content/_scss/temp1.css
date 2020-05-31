@@ -37,7 +37,7 @@
   display: block;
   clear: both;
   padding: 20px;
-  min-height: 457px;
+  min-height: 460px;
   height: auto; }
 
 .sticky {
@@ -57,6 +57,11 @@
   text-align: center;
   font-size: 15px; }
 
+.success {
+  color: green;
+  text-align: center !important;
+  font-size: 15px; }
+
 .header-title {
   margin-bottom: 20px; }
   .header-title h1 {
@@ -67,7 +72,8 @@ button {
   padding: 10px;
   border: none;
   color: white;
-  background: #0A0A24; }
+  background: #0A0A24;
+  outline: none; }
   button:hover {
     background: #239edb; }
 
@@ -159,7 +165,11 @@ body {
     .sidebar .sidebar-menu .avatar {
       width: 70px;
       height: 70px;
-      padding: 25px 0; }
+      padding: 10px 0; }
+    .sidebar .sidebar-menu .user {
+      font-size: 11px;
+      color: rgba(219, 219, 35, 0.54);
+      padding: 10px 0; }
     .sidebar .sidebar-menu ul {
       list-style-type: none;
       display: inherit;
@@ -179,8 +189,6 @@ body {
             border-color: #239edb; }
           .sidebar .sidebar-menu ul li a.active {
             border-color: #239edb; }
-        .sidebar .sidebar-menu ul li:first-child {
-          border-bottom: none; }
         .sidebar .sidebar-menu ul li:last-child {
           border-color: #444421; }
 
@@ -216,18 +224,22 @@ body {
   display: block;
   overflow: hidden; }
 
-.login-form form, .signup-form form {
+/*this is to ensure input and labels dont span outside its parent*/
+input, label {
+  box-sizing: border-box; }
+
+.login-form form, .signup-form form, .my_acc form {
   overflow: hidden;
   /*uncomment if label is added*/ }
-  .login-form form label, .signup-form form label {
+  .login-form form label, .signup-form form label, .my_acc form label {
     display: inline-block;
     margin-bottom: 5px;
     width: 100%;
     /*input masked in labels*/ }
-    .login-form form label input, .login-form form label select, .signup-form form label input, .signup-form form label select {
+    .login-form form label input, .login-form form label select, .signup-form form label input, .signup-form form label select, .my_acc form label input, .my_acc form label select {
       display: inline-block;
       padding: 10px; }
-  .login-form form input, .login-form form select, .signup-form form input, .signup-form form select {
+  .login-form form input, .login-form form select, .signup-form form input, .signup-form form select, .my_acc form input, .my_acc form select {
     display: inline-block;
     padding: 10px;
     width: 100%; }
@@ -244,7 +256,7 @@ body {
         text-decoration: underline;
         text-decoration-color: #0A0A24;
         padding-bottom: 3px; }
-  .form-cta .forgotpwd, .form-reminder .forgotpwd {
+  .form-cta .forgotpwd, .form-cta r_login, .form-reminder .forgotpwd, .form-reminder r_login {
     text-align: left; }
   .form-cta .signup, .form-cta .login, .form-reminder .signup, .form-reminder .login {
     text-align: right !important; }
@@ -258,7 +270,8 @@ body {
   border-right: none;
   border-left: none;
   border-bottom: 1px solid #0A0A24;
-  padding: 0 5px 0 5px; }
+  padding: 0 5px 0 5px;
+  box-sizing: border-box; }
   .form-declaration form input:hover, .form-declaration form input:active, .form-declaration form input:focus {
     background: #B9DEED;
     outline: none; }
@@ -307,5 +320,24 @@ body {
       margin-left: 5px; }
     .form-declaration .prev_declr a:hover {
       background: #239edb; }
+
+/*tables*/
+.table_header {
+  border-collapse: collapse; }
+  .table_header tr th {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #239edb; }
+  .table_header tr td {
+    padding: 10px;
+    max-width: 147px;
+    border: 1px solid #239edb;
+    font-size: 13px; }
+    .table_header tr td :last-child :before {
+      content: '\1F50D'; }
+  .table_header button {
+    background: transparent; }
+    .table_header button:hover, .table_header button:active, .table_header button:focus {
+      background: transparent; }
 
 /*# sourceMappingURL=temp1.css.map */

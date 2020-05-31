@@ -44,7 +44,7 @@
   display: block;
   clear: both;
   padding: 20px;
-  min-height: 457px;
+  min-height: 460px;
   height: auto;
 }
 
@@ -68,6 +68,12 @@
   font-size: 15px;
 }
 
+.success{
+  color: green;
+  text-align: center !important;
+  font-size: 15px;
+}
+
 .header-title{
   margin-bottom: 20px;
 
@@ -86,6 +92,7 @@ button {
   border: none;
   color: white;
   background: $blue;
+  outline: none;
 
   &:hover{
     background: $navy_blue;
@@ -216,7 +223,13 @@ body{
     .avatar {
       width: 70px;
       height: 70px;
-      padding: 25px 0;
+      padding: 10px 0;
+    }
+
+    .user{
+      font-size: 11px;
+      color: $yellow_opa;
+      padding: 10px 0;
     }
 
     ul {
@@ -228,6 +241,7 @@ body{
 
       li {
         border-bottom: 2px solid $yellow_opa;
+
 
         a{
           display: inherit;
@@ -248,9 +262,6 @@ body{
 
         }
 
-        &:first-child{
-          border-bottom: none;
-        }
         &:last-child{
           border-color: #444421 ;
         }
@@ -300,7 +311,11 @@ body{
   display: block;
   overflow: hidden;
 }
-.login-form, .signup-form {
+/*this is to ensure input and labels dont span outside its parent*/
+input, label{
+  box-sizing: border-box;
+}
+.login-form, .signup-form, .my_acc {
   form {
     overflow: hidden;
 
@@ -346,7 +361,7 @@ margin:10px;
     }
   }
 
-  .forgotpwd{
+  .forgotpwd, r_login{
     text-align: left;
   }
   .signup, .login{
@@ -371,6 +386,7 @@ margin:10px;
       border-left: none;
       border-bottom: 1px solid $blue;
       padding: 0 5px 0 5px;
+      box-sizing: border-box;
 
 
       &:hover, &:active, &:focus{
@@ -459,3 +475,48 @@ margin:10px;
     }
   }
 }
+
+/*tables*/
+.table_header{
+  border-collapse: collapse;
+    tr{
+
+      th{
+        text-align: center;
+        padding: 10px;
+        border: 1px solid $navy_blue;
+      }
+
+      td{
+        padding:10px;
+        max-width: 147px;
+        border: 1px solid $navy_blue;
+        font-size: 13px;
+
+        :last-child {
+
+          :before{
+              content: '\1F50D';
+          }
+
+
+        }
+
+      }
+    }
+
+  button{
+    background: transparent;
+
+    &:hover, &:active, &:focus{
+      background: transparent;
+    }
+
+
+
+  }
+}
+
+
+
+
