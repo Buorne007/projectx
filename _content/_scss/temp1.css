@@ -340,4 +340,8 @@ input, label {
     .table_header button:hover, .table_header button:active, .table_header button:focus {
       background: transparent; }
 
+/*User profile photo*/
+.media {
+  padding: 10px; }
+
 /*# sourceMappingURL=temp1.css.map */

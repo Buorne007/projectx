@@ -40,6 +40,10 @@ echo "<div id='header-title' class='header-title middle'>
                         </div>
                     </form>
                 </div>
+                <form action='_admin/_controller/media.php' class='media' method='post' enctype=\"multipart/form-data\">
+                    <label>Change profile photo<br><input type='file' name='user_img'></label>
+                    <input type='submit' name='user-img-submit'>
+                </form>
                       ";
         }
 
