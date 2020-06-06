@@ -20,13 +20,14 @@ if(isset($_POST['user-img-submit'])){
     if (move_uploaded_file($imgtmp, $target)) {
         echo "Image uploaded successfully";
 
-        $sql="INSERT INTO profile_photo(u_cf,img) VALUES (?,?)";
+        $sql= "UPDATE profile_photo SET img=? WHERE u_cf=?";
+//        $sql="INSERT INTO profile_photo(u_cf,img) VALUES (?,?)";
         $query = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($query, $sql)){
             echo "error connecting to database";
         }
         else{
-            mysqli_stmt_bind_param($query, "ss", $_SESSION['ucf'], $newimgname);
+            mysqli_stmt_bind_param($query, "ss",  $newimgname, $_SESSION['ucf'],);
             mysqli_stmt_execute($query);
             sleep(2);
         }

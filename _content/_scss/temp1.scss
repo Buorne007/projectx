@@ -518,8 +518,35 @@ margin:10px;
 
 /*User profile photo*/
 .media{
-  padding: 10px;
+
+
+  .button{
+    padding: 5px 10px;
+    background: $blue;
+    border: none;
+    color: white;
+
+    &:hover{
+      background: $navy_blue;
+    }
+  }
+}
+
+/*Mobile and responsiveness*/
+/*
+//desktop
+@media only screen and (min-width: 900px) {
+
 }
 
 
+//tablet
+@media only screen and (max-width: 600px) {
+  
+}
 
+//mobile
+@media only screen and (max-width: 425px) {
+
+}
+*/

@@ -341,7 +341,31 @@ input, label {
       background: transparent; }
 
 /*User profile photo*/
-.media {
-  padding: 10px; }
+.media .button {
+  padding: 5px 10px;
+  background: #0A0A24;
+  border: none;
+  color: white; }
+  .media .button:hover {
+    background: #239edb; }
+
+/*Mobile and responsiveness*/
+/*
+//desktop
+@media only screen and (min-width: 900px) {
+
+}
+
+
+//tablet
+@media only screen and (max-width: 600px) {
+  
+}
+
+//mobile
+@media only screen and (max-width: 425px) {
+
+}
+*/
 
 /*# sourceMappingURL=temp1.css.map */
